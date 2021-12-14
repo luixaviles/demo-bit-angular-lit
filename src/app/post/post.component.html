@@ -1,0 +1,10 @@
+<ng-container *ngIf="post$ | async as post; else loading">
+    <demo-card-title>{{ post.title }}</demo-card-title>
+    <demo-card-content>
+      {{ post.content }}
+    </demo-card-content>
+</ng-container>
+
+<ng-template #loading>
+  <div>Loading ...</div>
+</ng-template>

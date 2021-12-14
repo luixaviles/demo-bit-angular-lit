@@ -1,0 +1,17 @@
+<h2>Latest Posts</h2>
+
+<ng-container *ngIf="posts$ | async as posts; else loading">
+  <demo-card *ngFor="let post of posts">
+    <demo-card-title>{{ post.title }}</demo-card-title>
+    <demo-card-content>
+      {{ post.content }}
+    </demo-card-content>
+    <demo-card-actions>
+      <demo-button (click)="handleReadMore(post)">Read More</demo-button>
+    </demo-card-actions>
+  </demo-card>
+</ng-container>
+
+<ng-template #loading>
+  <div>Loading ...</div>
+</ng-template>
